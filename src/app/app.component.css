@@ -1,0 +1,94 @@
+.container{
+    width: 75%;
+}
+
+.po-details {
+ display: flex;
+ flex-direction: row;
+ flex-wrap: wrap;
+}
+
+.po-item {
+    margin-right: 12px;
+    margin-bottom: 16px;
+    width: 22%;
+}
+
+.po-header{
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    background: #0000001f;
+    text-align: center;
+    padding: 4px 6px;
+}
+
+.po-value{
+    text-align: center;
+}
+
+.col{
+    display: flex;
+    flex-direction: row;
+}
+
+/*Form Wizard Horizontal*/
+.bs-wizard {border-bottom: solid 1px #e0e0e0; padding: 0 0 10px 0;}
+.bs-wizard > .bs-wizard-step {padding: 0; position: relative;}
+.bs-wizard > .bs-wizard-step .bs-wizard-info {color: #999; font-size: 14px; }
+.bs-wizard > .bs-wizard-step > .bs-wizard-dot {
+    text-align: center;
+    padding-top: 4px;
+    color: white;
+    font-weight: 600;
+    position: absolute; 
+    width: 30px; 
+    height: 30px; 
+    display: block; 
+    background: green; 
+    top: 45px; 
+    left: 50%; 
+    margin-top: -36px; 
+    margin-left: -15px; 
+    border-radius: 50%;} 
+.bs-wizard > .bs-wizard-step > .progress {position: relative; border-radius: 0px; height: 8px; box-shadow: none; margin: 20px 0;}
+.bs-wizard > .bs-wizard-step > .progress > .progress-bar {width:0px; box-shadow: none; background: #0080006e;}
+.bs-wizard > .bs-wizard-step.complete > .progress > .progress-bar {width:100%;}
+.bs-wizard > .bs-wizard-step.active > .progress > .progress-bar {width:50%;}
+.bs-wizard > .bs-wizard-step:first-child.active > .progress > .progress-bar {width:0%;}
+.bs-wizard > .bs-wizard-step:last-child.active > .progress > .progress-bar {width: 100%;}
+.bs-wizard > .bs-wizard-step.disabled > .bs-wizard-dot {background-color: #f5f5f5; color: grey;}
+.bs-wizard > .bs-wizard-step.disabled > .bs-wizard-dot:after {opacity: 0;}
+.bs-wizard > .bs-wizard-step:first-child  > .progress {left: 50%; width: 50%;}
+.bs-wizard > .bs-wizard-step:last-child  > .progress {width: 50%;}
+/*END Form Wizard*/
+
+
+/*Form Wizard Vertical */
+.bs-vertical-wizard {border-bottom: solid 1px #e0e0e0; padding: 0 0 10px 0;}
+.bs-vertical-wizard > .bs-vertical-wizard-step .bs-vertical-wizard-info {color: #999; font-size: 14px;padding: 4px 14px;}
+.bs-vertical-wizard > .bs-vertical-wizard-step .bs-vertical-wizard-dot {
+    text-align: center;
+    padding-top: 4px;
+    color: white;
+    font-weight: 600;
+    width: 30px; 
+    height: 30px; 
+    background: green; 
+    border-radius: 50%;} 
+.bs-vertical-wizard > .bs-vertical-wizard-step .progress {
+    border-radius: 0px;
+    box-shadow: none; 
+    margin: 0;    
+    width: 10px;
+    position: relative;
+    left: 10px;
+    height: 100px;}
+.bs-vertical-wizard > .bs-vertical-wizard-step .progress > .progress-bar {height:0px; box-shadow: none; background: #0080006e;}
+.bs-vertical-wizard > .bs-vertical-wizard-step.complete .progress { background: #0080006e;}
+.bs-vertical-wizard > .bs-vertical-wizard-step.active .progress { background: #f5f5f5;}
+.bs-vertical-wizard > .bs-vertical-wizard-step.disabled .progress { background: #f5f5f5;}
+.bs-vertical-wizard > .bs-vertical-wizard-step.disabled .bs-vertical-wizard-dot {background-color: #f5f5f5; color: grey;}
+.bs-vertical-wizard > .bs-vertical-wizard-step.disabled .bs-vertical-wizard-dot:after {opacity: 0;}
+.bs-vertical-wizard > .bs-vertical-wizard-step:last-child .progress {height: 0px;}
+/*END Form Wizard Vertical*/
