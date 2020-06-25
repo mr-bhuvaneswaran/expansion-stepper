@@ -13,6 +13,7 @@ export class AppComponent  implements OnInit  {
 
     this.data = [{
           module: "Purchase Order Details",
+          type: 'table',
           moduleData: [
             {
               "buyers":"MaxRunner",
@@ -37,6 +38,7 @@ export class AppComponent  implements OnInit  {
         },
         {
           module: "Current Transport Status",
+          type: 'horizontal-stepper',
           TransportData: [
             {
               "step":1,
@@ -57,6 +59,7 @@ export class AppComponent  implements OnInit  {
         },
         {
           module: "Complete Transport Status",
+          type: 'vertical-stepper',
           CompleteData: [
             {
               "step":1,
@@ -78,6 +81,10 @@ export class AppComponent  implements OnInit  {
           ]
         }
       ];
+  }
+
+  getKeys(object) {
+    return Object.keys(object);
   }
 
   get firstKeyData() {

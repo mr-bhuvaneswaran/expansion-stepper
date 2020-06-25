@@ -1,50 +1,34 @@
 <mat-accordion>
-	<mat-expansion-panel class="container">
+	<mat-expansion-panel class="container" *ngFor="let module of data">
 		<mat-expansion-panel-header>
-			{{data[0].module}}
-      
+			{{module.module}}
 		</mat-expansion-panel-header>
-		<div class="po-details" >
-			<div class="po-item" *ngFor="let moduleKey of firstKeyData">
+
+		<div class="po-details" *ngIf="module.type==='table'">
+			<div class="po-item" *ngFor="let moduleKey of getKeys(module.moduleData[0])">
 				<div class="po-header"> {{ moduleKey }} </div>
-				<div class="po-value"> {{data[0].moduleData[0][moduleKey]}} </div>
+				<div class="po-value"> {{module.moduleData[0][moduleKey]}} </div>
 			</div>
 		</div>
-	</mat-expansion-panel>
 
-	<mat-expansion-panel class="container">
-		<mat-expansion-panel-header>
-			{{data[1].module}}
-      
-		</mat-expansion-panel-header>
-		<div class="row bs-wizard" style="border-bottom:0;">
-                
-			<div [ngClass]="'col-xs-3 bs-wizard-step' + getStatusClass(step, index, secondKeySteps)" *ngFor="let step of secondKeySteps; let index = index">
+		<div class="row bs-wizard" style="border-bottom:0;" *ngIf="module.type==='horizontal-stepper'">   
+			<div [ngClass]="'col-xs-3 bs-wizard-step' + getStatusClass(step, index, module.TransportData)" *ngFor="let step of module.TransportData; let index = index">
 			  <div class="progress"><div class="progress-bar"></div></div>
 			  <div class="bs-wizard-dot">{{step.step}}</div>
-			  <div class="bs-wizard-info text-center" *ngIf="isActive(step.status, index, secondKeySteps)">{{step.description}}</div>
+			  <div class="bs-wizard-info text-center" *ngIf="isActive(step.status, index, module.TransportData)">{{step.description}}</div>
 			</div>
-
 		</div>
-	</mat-expansion-panel>
 
-
-	<mat-expansion-panel class="container">
-		<mat-expansion-panel-header>
-			{{data[2].module}}
-      
-		</mat-expansion-panel-header>
-		<div class="bs-vertical-wizard" style="border-bottom:0;">
-    
-			<div [ngClass]="' col bs-vertical-wizard-step' + getStatusClass(step, index, thirdKeySteps)" *ngFor="let step of thirdKeySteps; let index = index">
+		<div class="bs-vertical-wizard" style="border-bottom:0;" *ngIf="module.type==='vertical-stepper'">
+			<div [ngClass]="'col bs-vertical-wizard-step' + getStatusClass(step, index, module.CompleteData)" *ngFor="let step of module.CompleteData; let index = index">
 				<div>
 					<div class="bs-vertical-wizard-dot">{{step.step}}</div>
 					<div class="progress"><div class="progress-bar"></div></div>
 				</div>	
-			  <div class="bs-vertical-wizard-info text-center" *ngIf="isActive(step.status, index, thirdKeySteps)">{{step.description}}</div>
+			  <div class="bs-vertical-wizard-info text-center" *ngIf="isActive(step.status, index, module.CompleteData)">{{step.description}}</div>
 			</div>
-
 		</div>
+
 	</mat-expansion-panel>
 
 </mat-accordion>
